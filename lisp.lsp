@@ -1,4 +1,5 @@
 ((lambda (ge)
+   (setq #+nil (defun funcall (f x) (f x)))
    (defun mcon% (a d)
      (lambda (c) (if (eq c 'car) a
                      (if (eq c 'cdr) d

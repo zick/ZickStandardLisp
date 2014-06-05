@@ -104,6 +104,5 @@
    (ae% '- (cons '%s% (lambda(x)(-(car x)(cadr% x)))))
    (ae% '/ (cons '%s% (lambda(x)(*(car x)(cadr% x)))))
    (ae% 'mod (cons '%s% (lambda(x)(mod(car x)(cadr% x)))))
-   (ae% 'print (cons '%s% (lambda(x)(print(car x)))))
    (eval%% 'WRITE_HERE))
  ())

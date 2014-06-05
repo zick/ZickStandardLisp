@@ -1,12 +1,14 @@
 ;;; A Lisp evaluator in Lisp.
 ;;;
-;;; This program is for both Zick's Lisp and Common Lisp.
 ;;; It consists of QUOTE, IF, LAMBDA, DEFUN, SETQ, CAR, CDR, CONS, EQ, ATOM, +,
-;;; *, -, /, and MOD.
+;;; *, -, /, and MOD. It provides them all, so it can run itself recursively.
+;;; This program is for both Zick's Lisp and Common Lisp.
 
 ((lambda (ge)
    ;; HACK: Common Lisp treats this as (setq) but my implementations treat #+nil
-   ;; as just a symbol so it defines funcall.
+   ;; as just a symbol so it defines funcall. Please modify this line if you
+   ;; want to run this evaluator with itself recursively in Common Lisp. CL's
+   ;; reader skips the defun of funcall but it's necessary for this evaluator.
    (setq #+nil (defun funcall (f x) (f x)))
 
    ;; Makes mutable cons using lambda.
@@ -96,11 +98,12 @@
    (ae% 'cdr (cons '%s% (lambda(x)(cdr(car x)))))
    (ae% 'cons (cons '%s% (lambda(x)(cons(car x)(cadr% x)))))
    (ae% 'eq (cons '%s% (lambda(x)(eq(car x)(cadr% x)))))
-   (ae% 'atom (cons '%s% (lambda(x)(atom(car(car x))))))
+   (ae% 'atom (cons '%s% (lambda(x)(atom(car x)))))
    (ae% '+ (cons '%s% (lambda(x)(+(car x)(cadr% x)))))
    (ae% '* (cons '%s% (lambda(x)(*(car x)(cadr% x)))))
    (ae% '- (cons '%s% (lambda(x)(-(car x)(cadr% x)))))
    (ae% '/ (cons '%s% (lambda(x)(*(car x)(cadr% x)))))
    (ae% 'mod (cons '%s% (lambda(x)(mod(car x)(cadr% x)))))
+   (ae% 'print (cons '%s% (lambda(x)(print(car x)))))
    (eval%% 'WRITE_HERE))
  ())

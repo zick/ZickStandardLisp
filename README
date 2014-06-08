@@ -1,0 +1,49 @@
+== Zick Standard Lisp
+
+A Lisp evaluator in Lisp.
+
+
+== What's this
+
+This is a Lisp evaluator for Zick's Lisp implementations. It supports 21
+implementations as of 2014-06-08 JST.
+- ScratchLisp: http://scratch.mit.edu/projects/18997849/
+- LuaLisp: https://github.com/zick/LuaLisp
+- PyLisp: https://github.com/zick/PyLisp
+- RbLisp: https://github.com/zick/RbLisp
+- RLisp: https://github.com/zick/RLisp
+- PerLisp: https://github.com/zick/PerLisp
+- FactorLisp: https://github.com/zick/FactorLisp
+- IoLisp: https://github.com/zick/IoLisp
+- NekoLisp: https://github.com/zick/NekoLisp
+- TcLisp: https://github.com/zick/TcLisp
+- CoffeeLisp: https://github.com/zick/CoffeeLisp
+- TypeLisp: https://github.com/zick/TypeLisp
+- DartLisp: https://github.com/zick/DartLisp
+- FalconLisp: https://github.com/zick/FalconLisp
+- EuphoriaLisp: https://github.com/zick/EuphoriaLisp
+- JSXLisp: https://github.com/zick/JSXLIsp
+- FantomLisp: https://github.com/zick/FantomLisp
+- CeylonLisp: https://github.com/zick/CeylonLisp
+- GroovyLisp: https://github.com/zick/GroovyLisp
+- SMLisp: https://github.com/zick/SMLisp
+- OCamLisp: https://github.com/zick/OCamLisp
+
+It consists of QUOTE, IF, LAMBDA, DEFUN, SETQ, CAR, CDR, CONS, EQ, ATOM, +, *,
+-, /, and MOD. It provides them all, so it can run itself recursively.
+
+
+== How to use
+
+# From command-line
+% ./compile.sh -e "(car '(a b c))" > car.zsl
+% lua lualisp.lua < car.zsl
+a
+# From file
+% ./compile.sh < fib5.lsp > fib5.zsl
+% python pylisp.py < fib5.zsl
+8
+# Run this evaluator itself
+% ./compile.sh < car.zsl > car_rec.zsl
+% ruby rblisp.rb < car_rec.zsl
+a

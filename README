@@ -5,8 +5,8 @@ A Lisp evaluator in Lisp.
 
 == What's this
 
-This is a Lisp evaluator for Zick's Lisp implementations. It supports 21
-implementations as of 2014-06-08 JST.
+This is a Lisp evaluator for Zick's Lisp implementations. It supports 24
+implementations as of 2014-06-15 JST.
 - ScratchLisp: http://scratch.mit.edu/projects/18997849/
 - LuaLisp: https://github.com/zick/LuaLisp
 - PyLisp: https://github.com/zick/PyLisp
@@ -28,6 +28,9 @@ implementations as of 2014-06-08 JST.
 - GroovyLisp: https://github.com/zick/GroovyLisp
 - SMLisp: https://github.com/zick/SMLisp
 - OCamLisp: https://github.com/zick/OCamLisp
+- DLisp: https://github.com/zick/DLisp
+- JavaLisp: https://github.com/zick/JavaLisp
+- C#Lisp: https://github.com/zick/CSharpLIsp
 
 It consists of QUOTE, IF, LAMBDA, DEFUN, SETQ, CAR, CDR, CONS, EQ, ATOM, +, *,
 -, /, and MOD. It provides them all, so it can run itself recursively.
